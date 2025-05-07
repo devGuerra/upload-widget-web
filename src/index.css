@@ -1,7 +1,19 @@
 @import "tailwindcss";
 
+/* Definição de variáveis de tema */
 @theme {
-	--font-sans: Inter, sans-serif;
+	/* Opacidade personalizada */
+	--opacity-2: 0.02;
+
+	/* Tamanho de fonte extra pequeno */
+	--text-xxs: 0.625rem;
+
+	/* Família de fontes personalizada */
+	--font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+		sans-serif;
+
+	/* Sombra personalizada */
 	--shadow-shape:
 		0px 8px 8px rgba(0, 0, 0, 0.1),
 		0px 4px 4px rgba(0, 0, 0, 0.1),
@@ -9,10 +21,25 @@
 		0px 0px 0px 1px rgba(0, 0, 0, 0.1),
 		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03),
 		inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+
 	--shadow-shape-content:
 		0px 0px 0px 1px rgba(0, 0, 0, 0.25),
 		inset 0px 1px 0px rgba(255, 255, 255, 0.02),
 		inset 0px 0px 0px 1px rgba(255, 255, 255, 0.02);
-	--opacity-2: 0.02;
-	--text-xxs: 0.625rem;
+
+	/* Animação personalizada */
+	--animate-border: border 2s linear infinite;
+
+	@keyframes border {
+		to {
+			--border-angle: 360deg;
+		}
+	}
+}
+
+/* Definição da propriedade personalizada para animação */
+@property --border-angle {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: 0deg;
 }
